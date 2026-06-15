@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+     healthy     0.9922    1.0000    0.9961       127
+  leaf_minor     1.0000    0.9933    0.9966       149
+
+    accuracy                         0.9964       276
+   macro avg     0.9961    0.9966    0.9964       276
+weighted avg     0.9964    0.9964    0.9964       276

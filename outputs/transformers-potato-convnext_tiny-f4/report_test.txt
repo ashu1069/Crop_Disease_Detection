@@ -1,0 +1,9 @@
+              precision    recall  f1-score   support
+
+early_blight     0.9969    0.9876    0.9922       323
+     healthy     0.9664    1.0000    0.9829       115
+ late_blight     1.0000    0.9955    0.9977       221
+
+    accuracy                         0.9924       659
+   macro avg     0.9878    0.9944    0.9910       659
+weighted avg     0.9926    0.9924    0.9924       659

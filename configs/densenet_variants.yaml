@@ -1,0 +1,42 @@
+# Reviewer #1: compare DenseXnet against stock DenseNet variants.
+# Sweep model.name over {densenet121,161,169,201, densexnet, densexnet_cbam}
+# and data.crop over {potato, okra, cowpea, cluster_bean}, all folds.
+experiment: densenet_variants
+seed: 42
+output_dir: outputs
+device: cuda
+
+data:
+  manifest: data/manifest.csv
+  crop: potato
+  image_size: 224
+  fold: 0
+  num_folds: 5
+  batch_size: 32
+  num_workers: 8
+
+model:
+  name: densenet121
+  pretrained: true
+  drop_rate: 0.2
+  densexnet_backbone: densenet121
+  densexnet_hidden: 256
+
+optim:
+  epochs: 40
+  lr: 0.0003
+  weight_decay: 0.0001
+  optimizer: adamw
+  scheduler: cosine
+  warmup_epochs: 3
+  label_smoothing: 0.05
+  use_class_weights: true
+  early_stop_patience: 10
+  mixed_precision: true
+  grad_clip: 1.0
+
+wandb:
+  project: crop_disease
+  entity: ashu-1069-rochester-institute-of-technology
+  mode: online
+  tags: [densenet-variants]

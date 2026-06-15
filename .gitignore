@@ -1,0 +1,25 @@
+# --- Python / env ---
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+
+# --- Large artifacts (keep repo < 50MB/file; these are regenerable) ---
+*.pt              # model checkpoints (100MB+ each)
+*.pth
+*.h5
+*.onnx
+*.ckpt
+
+# --- Data (download/prepare locally via cropdl.data.prepare) ---
+data/
+*.zip
+extracted/
+
+# --- Experiment tracking / stdout logs ---
+wandb/
+*.out             # training stdout dumps
+
+# --- OS ---
+.DS_Store

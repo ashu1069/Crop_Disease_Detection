@@ -1,0 +1,45 @@
+# Reviewer #4/#5: robustness under haze + effect of dehazing on accuracy.
+# Train once on clean images (this config), then evaluate the trained checkpoint
+# three ways with run_eval.py: clean / hazy / hazy+dehazed (dcp, aodnet).
+experiment: dehazing
+seed: 42
+output_dir: outputs
+device: cuda
+
+data:
+  manifest: data/manifest.csv
+  crop: okra
+  image_size: 224
+  fold: 0
+  num_folds: 5
+  batch_size: 32
+  num_workers: 8
+  haze_eval: false          # flipped to true at eval time
+  haze_beta: 1.5
+  haze_airlight: 0.8
+  dehaze_method: none       # set to dcp/aodnet at eval time
+
+model:
+  name: densexnet
+  pretrained: true
+  densexnet_backbone: densenet121
+  densexnet_hidden: 256
+
+optim:
+  epochs: 40
+  lr: 0.0003
+  weight_decay: 0.0001
+  optimizer: adamw
+  scheduler: cosine
+  warmup_epochs: 3
+  label_smoothing: 0.05
+  use_class_weights: true
+  early_stop_patience: 10
+  mixed_precision: true
+  grad_clip: 1.0
+
+wandb:
+  project: crop_disease
+  entity: ashu-1069-rochester-institute-of-technology
+  mode: online
+  tags: [dehazing]

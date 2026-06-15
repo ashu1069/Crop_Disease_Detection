@@ -1,0 +1,40 @@
+# Reviewer #6: transformer / attention models vs CNN baselines.
+# Sweep model.name over {vit_small, vit_base, swin_tiny, convnext_tiny,
+# deit_small, densexnet_cbam} (densexnet_cbam = attention-augmented CNN).
+experiment: transformers
+seed: 42
+output_dir: outputs
+device: cuda
+
+data:
+  manifest: data/manifest.csv
+  crop: potato
+  image_size: 224          # ViT/Swin/DeiT require 224
+  fold: 0
+  num_folds: 5
+  batch_size: 32
+  num_workers: 8
+
+model:
+  name: vit_small
+  pretrained: true
+  drop_rate: 0.1
+
+optim:
+  epochs: 40
+  lr: 0.00005              # transformers prefer a smaller LR when fine-tuning
+  weight_decay: 0.05
+  optimizer: adamw
+  scheduler: cosine
+  warmup_epochs: 5
+  label_smoothing: 0.1
+  use_class_weights: true
+  early_stop_patience: 10
+  mixed_precision: true
+  grad_clip: 1.0
+
+wandb:
+  project: crop_disease
+  entity: ashu-1069-rochester-institute-of-technology
+  mode: online
+  tags: [transformers]

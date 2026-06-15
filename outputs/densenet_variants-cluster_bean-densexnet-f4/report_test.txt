@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+     healthy     0.9895    0.9792    0.9843        96
+      mosaic     0.9907    0.9953    0.9930       214
+
+    accuracy                         0.9903       310
+   macro avg     0.9901    0.9872    0.9887       310
+weighted avg     0.9903    0.9903    0.9903       310

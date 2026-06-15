@@ -1,0 +1,9 @@
+              precision    recall  f1-score   support
+
+     healthy     0.8448    0.9608    0.8991        51
+       jasid     0.8608    1.0000    0.9252        68
+     powdery     1.0000    0.9241    0.9605       237
+
+    accuracy                         0.9438       356
+   macro avg     0.9019    0.9616    0.9283       356
+weighted avg     0.9512    0.9438    0.9450       356

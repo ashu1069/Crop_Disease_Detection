@@ -1,0 +1,41 @@
+>>> 00:58:36 [okra] train AOD-Net dehazer (20 ep)
+    aodnet OK
+>>> 01:11:32 [okra] dehazing quality PSNR/SSIM (DCP vs AOD-Net, 150 imgs)
+    quality OK
+>>> 01:11:55 [okra] robustness eval on densexnet: clean/hazy/dcp/aodnet
+    robust OK
+>>> 01:13:13 [okra] Grad-CAM: densexnet
+    gradcam-densexnet OK
+>>> 01:13:21 [okra] Grad-CAM: vit_small (winner)
+    gradcam-vit_small OK
+>>> 01:13:28 [cowpea] train AOD-Net dehazer (20 ep)
+    aodnet OK
+>>> 01:25:18 [cowpea] dehazing quality PSNR/SSIM (DCP vs AOD-Net, 150 imgs)
+    quality OK
+>>> 01:25:44 [cowpea] robustness eval on densexnet: clean/hazy/dcp/aodnet
+    robust OK
+>>> 01:26:22 [cowpea] Grad-CAM: densexnet
+    gradcam-densexnet OK
+>>> 01:26:29 [cowpea] Grad-CAM: vit_small (winner)
+    gradcam-vit_small OK
+>>> 01:26:36 [cluster_bean] train AOD-Net dehazer (20 ep)
+    aodnet OK
+>>> 01:41:26 [cluster_bean] dehazing quality PSNR/SSIM (DCP vs AOD-Net, 150 imgs)
+    quality OK
+>>> 01:41:55 [cluster_bean] robustness eval on densexnet: clean/hazy/dcp/aodnet
+    robust OK
+>>> 01:43:25 [cluster_bean] Grad-CAM: densexnet
+    gradcam-densexnet OK
+>>> 01:43:32 [cluster_bean] Grad-CAM: swin_tiny (winner)
+    gradcam-swin_tiny OK
+>>> 01:43:40 [potato] train AOD-Net dehazer (20 ep)
+    aodnet OK
+>>> 01:50:22 [potato] dehazing quality PSNR/SSIM (DCP vs AOD-Net, 150 imgs)
+    quality OK
+>>> 01:50:34 [potato] robustness eval on densexnet: clean/hazy/dcp/aodnet
+    robust OK
+>>> 01:51:43 [potato] Grad-CAM: densexnet
+    gradcam-densexnet OK
+>>> 01:51:49 [potato] Grad-CAM: convnext_tiny (winner)
+    gradcam-convnext_tiny OK
+=== DEHAZE/GRADCAM COMPLETE Mon Jun 15 01:51:55 AM EDT 2026 ===
